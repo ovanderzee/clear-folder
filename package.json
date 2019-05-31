@@ -1,0 +1,21 @@
+{
+  "name": "clear-folder",
+  "version": "1.0.0",
+  "description": "Deletes the contents of a directory synchronously, your build directory for instance",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ovanderzee/clear-folder.git"
+  },
+  "keywords": [
+    "clean",
+    "clear",
+    "empty",
+    "directory",
+    "folder",
+    "build tool",
+    "cli"
+  ],
+  "author": "Onno van der Zee",
+  "license": "ISC"
+}
