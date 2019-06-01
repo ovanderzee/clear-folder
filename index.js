@@ -4,6 +4,7 @@ var dirs = process.argv.splice(2);
 
 var clearFolderContents = function ( path ) {
   if ( fs.existsSync( path ) ) {
+    console.log( 'Clear folder: ' + path );
     fs.readdirSync(path).forEach ( function ( file, index ) {
       var curPath = path + "/" + file;
       if (fs.lstatSync( curPath ).isDirectory()) {
@@ -14,14 +15,16 @@ var clearFolderContents = function ( path ) {
       }
     });
   } else {
-    console.log('Clear folder: ' + path + ' is unknown on the filesystem');
+    console.log( 'Clear folder: ' + path + ' is unknown on the filesystem' );
   }
 };
 
-if ( !dirs.length ) {
-  console.log('Clear folder is here! :)');
-}
+module.exports = function () {
+  if ( !dirs.length ) {
+    console.log( 'Clear folder was installed correctly' );
+  }
 
-for ( var i = 0; i > dirs.length; i++ ) {
-	clearFolderContents( dirs[i] );
-}
+  for ( var i = 0; i > dirs.length; i++ ) {
+    clearFolderContents( dirs[i] );
+  }
+};
