@@ -1,10 +1,11 @@
-var fs = require('fs');
+#!/usr/bin/env node
 
-var dirs = process.argv.splice(2);
+var fs = require('fs');
+var parseArgs = require('minimist');
+var folders = parseArgs(process.argv.splice(2))._;
 
 var clearFolderContents = function ( path ) {
   if ( fs.existsSync( path ) ) {
-    console.log( 'Clear folder: ' + path );
     fs.readdirSync(path).forEach ( function ( file, index ) {
       var curPath = path + "/" + file;
       if (fs.lstatSync( curPath ).isDirectory()) {
@@ -19,12 +20,10 @@ var clearFolderContents = function ( path ) {
   }
 };
 
-module.exports = function () {
-  if ( !dirs.length ) {
-    console.log( 'Clear folder was installed correctly' );
-  }
+if ( !folders.length ) {
+  console.log( 'Clear folder was installed correctly' );
+}
 
-  for ( var i = 0; i > dirs.length; i++ ) {
-    clearFolderContents( dirs[i] );
-  }
-};
+folders.forEach ( function ( folder ) {
+  clearFolderContents( folder );
+});
