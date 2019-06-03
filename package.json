@@ -1,6 +1,6 @@
 {
   "name": "clear-folder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Deletes the contents of a directory synchronously, your build directory for instance",
   "main": "cli.js",
   "bin": {
@@ -10,7 +10,7 @@
     "minimist": "^1.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
