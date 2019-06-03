@@ -5,11 +5,15 @@ Clears the contents of a directory synchronously, your build directory for insta
 
 ## Bare bones
 clear-folder is a cli app intended to use in the scripts section of a package.json. 
-It just uses of the synchronous methods of the node.js fs module and a dependency to read the commandline.
-clear-folder just uses of the synchronous methods of the node.js fs module.
+It just uses of the synchronous methods of the node.js fs module.
 Add a number of names of folders to empty:
 
     clear-folder folder
+    clear-folder ./folder
     clear-folder folder1 folder2
+
+On the command line you could use:
+
+	npx clear-folder folder
 
 Nothing else

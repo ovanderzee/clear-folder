@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var parseArgs = require('minimist');
-var folders = parseArgs(process.argv.splice(2))._;
+
+var folders = process.argv.splice(2);
 
 var clearFolderContents = function ( path ) {
   if ( fs.existsSync( path ) ) {
