@@ -1,7 +1,7 @@
 {
   "name": "clear-folder",
   "version": "1.1.2",
-  "description": "Deletes the contents of a directory synchronously, your build directory for instance",
+  "description": "Deletes the contents of a directory synchronously, for instance your build directory",
   "main": "cli.js",
   "bin": {
     "clear-folder": "./cli.js"

@@ -17,4 +17,4 @@ On the command line you could use:
 
 	npx clear-folder folder
 
-Nothing else
+Nothing else!!
