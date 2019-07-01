@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/ovanderzee/clear-folder.svg?branch=master)](https://travis-ci.com/ovanderzee/clear-folder)
 
 # clear-folder
-Clears the contents of a directory synchronously, your build directory for instance
+Clears the contents of a directory synchronously, for instance your build directory
 
 ## Bare bones
 clear-folder is a cli app intended to use in the scripts section of a package.json. 
