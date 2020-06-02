@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
+const fs = require('fs');
 
-var folders = process.argv.splice(2);
+// [0] = node, [1] = clear-folder
+const folders = process.argv.splice(2);
 
-var clearFolderContents = function ( path ) {
+const clearFolderContents = function ( path ) {
   if ( fs.existsSync( path ) ) {
     fs.readdirSync(path).forEach ( function ( file, index ) {
       var curPath = path + "/" + file;
