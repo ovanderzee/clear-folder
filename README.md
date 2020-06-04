@@ -4,11 +4,14 @@
 Clears the contents of a directory synchronously,
 for instance the build directory of your node package module.
 
-## Bare bones
-Clear-folder is a cli app intended to use in the scripts section of a package.json.
+## Safe deleting
+Clear-folder is a cli app,
+intended to use safely in the scripts section of a package.json.
 It just uses the synchronous methods of the node.js fs module.
+The directory to clear must be inside the current directory.
 For brevity you may call this app with 'cf' instead of 'clear-folder'.
 
+## Usage
 Add a number of names of folders to empty:
 
 ```json

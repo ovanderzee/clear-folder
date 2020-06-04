@@ -8,7 +8,7 @@ const folders = process.argv.splice(2);
 const clearFolderContents = function ( path ) {
   if ( fs.existsSync( path ) ) {
     fs.readdirSync(path).forEach ( function ( file, index ) {
-      var curPath = path + "/" + file;
+      const curPath = path + "/" + file;
       if (fs.lstatSync( curPath ).isDirectory()) {
         clearFolderContents( curPath );
         fs.rmdirSync( curPath );
@@ -17,14 +17,23 @@ const clearFolderContents = function ( path ) {
       }
     });
   } else {
-    console.log( 'Clear folder: ' + path + ' is unknown on the filesystem' );
+    console.log( `clear-folder can't find "${path}"` )
   }
 };
 
 if ( !folders.length ) {
-  console.log( 'Clear folder was installed correctly' );
+  console.log( `clear-folder needs folder-name(s) relative to the current directory to operate` )
 }
 
 folders.forEach ( function ( folder ) {
-  clearFolderContents( folder );
-});
+  const folderArray = folder.split('/')
+  if (
+    folderArray.includes('.') ||
+    folderArray.includes('..') ||
+    folderArray.includes('~')
+  ) {
+    console.log( `clear-folder can't work with the path oparators in "${folder}"` )
+    return
+  }
+  clearFolderContents( process.cwd() + '/' + folder )
+})
