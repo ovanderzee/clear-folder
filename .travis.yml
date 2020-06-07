@@ -8,4 +8,4 @@ branches:
 jobs:
   include:
     - stage: Produce Coverage
-      script: tap test/*.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      script: tap test/*.js --coverage-report=lcov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
