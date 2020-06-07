@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/ovanderzee/clear-folder.svg?branch=master)](https://travis-ci.com/ovanderzee/clear-folder)
+[![Coverage Status](https://coveralls.io/repos/github/ovanderzee/clear-folder/badge.svg?branch=master)](https://coveralls.io/github/ovanderzee/clear-folder?branch=master)
 
 # clear-folder
 Clears the contents of a directory synchronously,

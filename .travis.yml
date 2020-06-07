@@ -4,3 +4,8 @@ node_js:
 branches:
   only:
     - master
+
+jobs:
+  include:
+    - stage: Produce Coverage
+      script: tap test/*.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
