@@ -8,7 +8,7 @@
     "cf": "./cli.js"
   },
   "scripts": {
-    "coverage": "node ./cli.js .nyc_output && tap test/*.js --coverage-report=lcov",
+    "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
     "test": "node ./cli.js .nyc_output && tap test/*.js"
   },
   "repository": {
