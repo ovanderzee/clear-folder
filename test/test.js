@@ -24,10 +24,7 @@ const setup = function () {
     check( subfolder, subfile )
 }
 
-tap.beforeEach((done, t) => {
-    setup()
-    done()
-})
+tap.beforeEach(setup)
 
 tap.test('test setup', function ( t ) {
     t.ok( fs.existsSync( process.cwd() + '/probe/probe.txt' ), `file ${probefile} should be set` )
