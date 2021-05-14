@@ -82,7 +82,7 @@ tap.test('clear playground with full path, is executed: content gone', function 
     t.end()
 })
 
-tap.test('clear playground with full path, referencing the current directory: nothing happens', function ( t ) {
+tap.test('clear module with full path, referencing the current directory: nothing happens', function ( t ) {
     spawnSync( 'node', ['cli.js', moduleRoot] )
     t.ok( fs.existsSync( subfolder ), `folder ${subfolder} should not be touched` )
     t.ok( fs.existsSync( playfile ), `file ${playfile} should not be touched` )
