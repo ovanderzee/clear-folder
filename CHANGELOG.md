@@ -1,5 +1,18 @@
 # Changelog
 
+
+## [3.0.0] - 2021-05-14
+
+Deal with various forms a folder-path can have.
+
+### Added
+- Handle absolute paths
+
+### Changed
+- BREAKING: Path operators ( '.', '..' ) are resolved now
+- BREAKING: '~' is now treated as a normal name by the module
+
+
 ## [2.0.0] - 2020-06-05
 
 After a year it was time to mature clear-folder a bit.

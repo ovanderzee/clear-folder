@@ -33,28 +33,57 @@ tap.test('test setup', function ( t ) {
     t.end()
 })
 
-tap.test('clear playground, folder remains', function ( t ) {
-    spawnSync( 'node', ['cli.js', 'probe/playground'] )
-    t.ok( fs.existsSync( playground ), `folder ${playground} should exist` )
-    t.end()
-})
-
-tap.test('clear playground, content gone', function ( t ) {
+tap.test('clear playground, folder remains, content gone', function ( t ) {
     spawnSync( 'node', ['cli.js', 'probe/playground'] )
     t.notOk( fs.existsSync( subfolder ), `folder ${subfolder} should not exist` )
     t.notOk( fs.existsSync( playfile ), `file ${playfile} should not exist` )
     t.end()
 })
 
-tap.test('clear playground with dot, nothing happens', function ( t ) {
+tap.test('clear playground with leading here-dot, is executed: content gone', function ( t ) {
+    spawnSync( 'node', ['cli.js', './probe/playground'] )
+    t.notOk( fs.existsSync( subfolder ), `folder ${subfolder} should not exist` )
+    t.notOk( fs.existsSync( playfile ), `file ${playfile} should not exist` )
+    t.end()
+})
+
+tap.test('clear playground with trailing here-dot, is executed: content gone', function ( t ) {
     spawnSync( 'node', ['cli.js', 'probe/playground/.'] )
+    t.notOk( fs.existsSync( subfolder ), `folder ${subfolder} should not exist` )
+    t.notOk( fs.existsSync( playfile ), `file ${playfile} should not exist` )
+    t.end()
+})
+
+tap.test('clear playground with leading up-dots, referencing sibling of current directory: nothing happens', function ( t ) {
+    spawnSync( 'node', ['cli.js', '../probe/playground/subfolder'] )
     t.ok( fs.existsSync( subfolder ), `folder ${subfolder} should not be touched` )
     t.ok( fs.existsSync( playfile ), `file ${playfile} should not be touched` )
     t.end()
 })
 
-tap.test('clear playground with up-dots, nothing happens', function ( t ) {
+tap.test('clear playground with trailing up-dots, referencing "playground" directory: content gone', function ( t ) {
     spawnSync( 'node', ['cli.js', 'probe/playground/subfolder/..'] )
+    t.notOk( fs.existsSync( subfolder ), `folder ${subfolder} should not exist` )
+    t.notOk( fs.existsSync( playfile ), `file ${playfile} should not exist` )
+    t.end()
+})
+
+tap.test('clear playground with absolute path, referencing outside current directory: nothing happens', function ( t ) {
+    spawnSync( 'node', ['cli.js', '/probe/playground/subfolder'] )
+    t.ok( fs.existsSync( subfolder ), `folder ${subfolder} should not be touched` )
+    t.ok( fs.existsSync( playfile ), `file ${playfile} should not be touched` )
+    t.end()
+})
+
+tap.test('clear playground with full path, is executed: content gone', function ( t ) {
+    spawnSync( 'node', ['cli.js', playground] )
+    t.notOk( fs.existsSync( subfolder ), `folder ${subfolder} should not exist` )
+    t.notOk( fs.existsSync( playfile ), `file ${playfile} should not exist` )
+    t.end()
+})
+
+tap.test('clear playground with full path, referencing the current directory: nothing happens', function ( t ) {
+    spawnSync( 'node', ['cli.js', moduleRoot] )
     t.ok( fs.existsSync( subfolder ), `folder ${subfolder} should not be touched` )
     t.ok( fs.existsSync( playfile ), `file ${playfile} should not be touched` )
     t.end()

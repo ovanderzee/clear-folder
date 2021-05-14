@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const path = require('path')
 
 /**
  * Remove from deepest subfolder up to specified folder
- * @param {string} path - folder name
+ * @param {string} folder - folder name
  */
-const clearFolderContents = function ( path ) {
-    if ( fs.existsSync( path ) ) {
-        fs.readdirSync(path).forEach ( function ( file, index ) {
-            const curPath = path + "/" + file
+const clearFolderContents = function ( folder ) {
+    if ( fs.existsSync( folder ) ) {
+        fs.readdirSync(folder).forEach ( function ( file, index ) {
+            const curPath = folder + "/" + file
             if (fs.lstatSync( curPath ).isDirectory()) {
                 clearFolderContents( curPath )
                 fs.rmdirSync( curPath )
@@ -18,7 +19,7 @@ const clearFolderContents = function ( path ) {
             }
         })
     } else {
-        throw new Error( `clear-folder can't find "${path}"` )
+        throw new Error( `clear-folder can't find "${folder}"` )
     }
 }
 
@@ -32,27 +33,27 @@ const clearFolderGate = function ( folders ) {
         throw new Error(`clear-folder needs one or more foldernames to operate`)
     }
 
-    // do not operate when finding opportunities to work
-    // other than below the working directory
-    folders.forEach ( function ( folder ) {
-        const folderArray = folder.split('/')
+    // do not operate on current directory or above
+    const checkedFolders = folders.map ( function ( folder ) {
+        const fullPath = path.resolve( folder )
+        const projectPath = process.cwd() + '/'
+        const localPath = fullPath.substr( projectPath.length )
+
         if (
-            folderArray.includes( '.' ) ||
-            folderArray.includes( '..' ) ||
-            folderArray.includes( '~' )
+            !fullPath.startsWith( process.cwd() ) ||
+            fullPath === process.cwd()
         ) {
             throw new Error(
-                `clear-folder can't work with path operators in ${folder}`
+                `clear-folder operates on subfolders of current directory; check ${folder}`
             )
         }
+        return fullPath
     })
 
-    folders.forEach ( function ( folder ) {
+    checkedFolders.forEach ( function ( checkedFolder ) {
         try {
-            clearFolderContents( process.cwd() + '/' + folder )
+            clearFolderContents( checkedFolder )
         } catch ( err ) {
-            // catch find-folder errors,
-            // the command will be used fot hthe sake of being sure
             console.error( `${err.name}: ${err.message}` )
         }
     })
