@@ -22,6 +22,7 @@ still bare-bones.
 ### Added
 - Brief alias 'cf' for the command name 'clear-folder'
 - Errorhandling and error messages
+- CommonJS export of the main function
 - Tests
 - Formatting
 

@@ -23,10 +23,18 @@ Add a number of names of folders to empty:
 }
 ```
 
-On the command line you could use:
+On the command line:
 
 ```sh
 npx cf folder
+```
+
+In a script:
+
+```js
+const cf = require('clear-folder');
+...
+cf(['folder1', 'folder2'])
 ```
 
 Nothing else!!
