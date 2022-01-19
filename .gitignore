@@ -1,5 +1,6 @@
 coverage
 .DS_Store
+.idea
 node_modules
 .nyc_output
 probe
