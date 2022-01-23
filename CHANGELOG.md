@@ -1,6 +1,10 @@
 # Changelog
 
 
+## [4.0.0] - 2022-01-23
+
+Modernise along with NodeJS.
+
 ## [3.0.0] - 2021-05-14
 
 Deal with various forms a folder-path can have.
