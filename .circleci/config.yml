@@ -13,7 +13,7 @@ jobs:
             - checkout
             - run:
                   name: Install and Test
-                  command: npm install && npx jest --coverage
+                  command: npm install && node ./cli.js .nyc_output && tap test/*.js
             - coveralls/upload:
                   token: COVERALLS_REPO_TOKEN
                   verbose: true
