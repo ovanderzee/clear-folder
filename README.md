@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/ovanderzee/clear-folder.svg?branch=main)](https://travis-ci.com/ovanderzee/clear-folder)
 [![Coverage Status](https://coveralls.io/repos/github/ovanderzee/clear-folder/badge.svg?branch=main)](https://coveralls.io/github/ovanderzee/clear-folder?branch=main)
 
 # clear-folder
