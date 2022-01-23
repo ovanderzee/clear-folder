@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 /**
  * Remove from deepest subfolder up to specified folder
@@ -66,4 +66,4 @@ if (process.argv.length > 2) {
     )
 }
 
-module.exports = clearFolderGate
+export default clearFolderGate

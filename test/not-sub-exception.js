@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
-const tap = require('tap')
-const clearFolder = require('../cli.js')
+import fs from 'fs'
+import path from 'path'
+import tap from 'tap'
+import clearFolder from '../cli.js'
 
 const folderErrObj = function ( folder ) {
     return {

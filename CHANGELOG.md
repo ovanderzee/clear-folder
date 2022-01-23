@@ -5,6 +5,10 @@
 
 Modernise along with NodeJS.
 
+### Changed
+- BREAKING: Clear-folder is an es-module now.
+
+
 ## [3.0.0] - 2021-05-14
 
 Deal with various forms a folder-path can have.
