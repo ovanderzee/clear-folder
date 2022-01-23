@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 
 /**
  * Remove from deepest subfolder up to specified folder
@@ -20,7 +21,8 @@ const clearFolderContents = function ( folder ) {
         })
         return 1
     } else {
-        console.error( `clear-folder can't find "${folder}"` )
+        const text = `clear-folder can't find "${folder.substr( process.cwd().length + 1 )}"`
+        console.error( chalk.bgGreen.whiteBright( ` ${text} ` ) )
         return 0
     }
 }
@@ -31,32 +33,39 @@ const clearFolderContents = function ( folder ) {
  */
 const clearFolderGate = function ( folders ) {
     // usage hint
-    if ( !folders.length || ['--help', '-h', '-?'].includes(folders[0])) {
-        throw new Error(`clear-folder needs one or more foldernames to operate`)
+    if ( !folders.length || ['--help', '-h'].includes( folders[0] ) || folders[0].includes( '?' ) ) {
+        const text = `clear-folder needs one or more foldernames to operate`
+        console.info( chalk.bold( ` ${text} ` ) )
+        return -1
     }
 
-    // do not operate on current directory or above
-    const checkedFolders = folders.map ( function ( folder ) {
-        const fullPath = path.resolve( folder )
-        const projectPath = process.cwd() + '/'
-        const localPath = fullPath.substr( projectPath.length )
+    // filter out attempts to operate outside the current working directory
+    const checkedFolders = folders
+        .map ( folder => {
+            const fullPath = path.resolve( folder )
 
-        if (
-            !fullPath.startsWith( process.cwd() ) ||
-            fullPath === process.cwd()
-        ) {
-            throw new Error(
-                `clear-folder operates on subfolders of current directory; check ${folder}`
-            )
-        }
-        return fullPath
-    })
+            if (
+                !fullPath.startsWith( process.cwd() ) ||
+                fullPath === process.cwd()
+            ) {
+                const text = `clear-folder operates on subfolders of current directory; check "${folder}"`
+                console.error( chalk.bgRed.whiteBright( ` ${text} ` ) )
+                return ''
+            }
+            return fullPath
+        })
+        .filter ( folder => folder )
 
-    const removeTotal = checkedFolders.reduce((total, checkedFolder) => {
-        const removeCount = clearFolderContents( checkedFolder )
-        return total + removeCount
-    }, 0)
-    return removeTotal
+    if (folders.length === checkedFolders.length) {
+        const removeTotal = checkedFolders.reduce((total, checkedFolder) => {
+            const removeCount = clearFolderContents( checkedFolder )
+            return total + removeCount
+        }, 0)
+        return removeTotal
+    } else {
+        // do not operate on current directory or above
+        return -1
+    }
 }
 
 if (process.argv && process.argv.length > 2) {

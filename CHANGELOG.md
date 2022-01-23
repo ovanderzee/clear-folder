@@ -7,8 +7,9 @@
 - Return count of emptied folders
 
 ### Changed
-- Log instead of throw when a folder is not found
-
+- Log instead of throw when a folder is not found or rejected,or when help was wanted
+- Log rejected folder array in red
+- Log missing folder in green
 
 ## [3.0.0] - 2021-05-14
 

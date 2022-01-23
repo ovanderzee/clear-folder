@@ -3,13 +3,26 @@ const path = require('path')
 const tap = require('tap')
 const clearFolder = require('../cli.js')
 
-tap.test(`a message is logged and the operation is aborted
+tap.test(`the operation is aborted
         when no folders are specified`, function ( t ) {
-    const throwing = function () { clearFolder( [] ) }
-    const errObj = {
-        message: 'clear-folder needs one or more foldernames to operate'
-    }
-    t.throws( throwing, errObj )
+    const returnValue = clearFolder( [] )
+    t.ok( returnValue === -1, `no operation` )
+
+    t.end()
+})
+
+tap.test(`the operation is aborted
+        when help was wanted (1)`, function ( t ) {
+    const returnValue = clearFolder( ['--help'] )
+    t.ok( returnValue === -1, `no operation` )
+
+    t.end()
+})
+
+tap.test(`the operation is aborted
+        when help was wanted (2)`, function ( t ) {
+    const returnValue = clearFolder( ['?'] )
+    t.ok( returnValue === -1, `no operation` )
 
     t.end()
 })
