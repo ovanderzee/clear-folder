@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.1.0] - 2022-01-20
+
+### Added
+- Return count of emptied folders
+
+### Changed
+- Log instead of throw when a folder is not found
+
+
 ## [3.0.0] - 2021-05-14
 
 Deal with various forms a folder-path can have.

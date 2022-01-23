@@ -18,8 +18,10 @@ const clearFolderContents = function ( folder ) {
                 fs.unlinkSync( curPath )
             }
         })
+        return 1
     } else {
-        throw new Error( `clear-folder can't find "${folder}"` )
+        console.error( `clear-folder can't find "${folder}"` )
+        return 0
     }
 }
 
@@ -50,17 +52,15 @@ const clearFolderGate = function ( folders ) {
         return fullPath
     })
 
-    checkedFolders.forEach ( function ( checkedFolder ) {
-        try {
-            clearFolderContents( checkedFolder )
-        } catch ( err ) {
-            console.error( `${err.name}: ${err.message}` )
-        }
-    })
+    const removeTotal = checkedFolders.reduce((total, checkedFolder) => {
+        const removeCount = clearFolderContents( checkedFolder )
+        return total + removeCount
+    }, 0)
+    return removeTotal
 }
 
-if (process.argv.length > 2) {
-    clearFolderGate(
+if (process.argv && process.argv.length > 2) {
+    return clearFolderGate(
         // [0] = node, [1] = clear-folder
         process.argv.splice(2)
     )
