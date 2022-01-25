@@ -11,6 +11,7 @@
     "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
     "test": "node ./cli.js .nyc_output && tap test/*.js"
   },
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/ovanderzee/clear-folder.git"
