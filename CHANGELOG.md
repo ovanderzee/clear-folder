@@ -4,12 +4,15 @@
 ## [3.1.0] - 2022-01-20
 
 ### Added
-- Return count of emptied folders
+- Typescript support
+- Return codes
+- Colored program-flow messages
 
 ### Changed
-- Log instead of throw when a folder is not found or rejected,or when help was wanted
-- Log rejected folder array in red
-- Log missing folder in green
+- Migrate from travis to circle-ci
+- Gentler handling of unwanted situations
+- Fix breaking loop when folder was not found
+
 
 ## [3.0.0] - 2021-05-14
 

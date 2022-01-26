@@ -37,4 +37,9 @@ const cf = require('clear-folder');
 cf(['folder1', 'folder2'])
 ```
 
-Nothing else!!
+## Return codes
+
+Clear-folder returns the number of emptied folders.
+When no folders are specified, clear-folder prints an helpful message and returns -1
+When one of folders points at or outside the current working diectory, clear-folder aborts and returns -1
+
