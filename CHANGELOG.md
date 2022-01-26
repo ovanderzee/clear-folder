@@ -11,7 +11,10 @@
 ### Changed
 - Migrate from travis to circle-ci
 - Gentler handling of unwanted situations
+
+### Fixed
 - Fix breaking loop when folder was not found
+- Replaced vague test skipping by using return codes
 
 
 ## [3.0.0] - 2021-05-14
