@@ -69,15 +69,14 @@ tap.test(`no removals are carried out when the home-folder is referenced`, funct
 })
 
 tap.test(`the operation is aborted when an existent folder outside the current working directory is specified`, function ( t ) {
-    const folders = ['target-folder']
-    setupTest( t, folders )
+    const folder = 'target-folder'
+    fs.mkdirSync( folder )
     process.chdir( 'test' )
 
-    const removeCount = clearFolder( ['../' + folders[0]] )
-console.log( 'removeCount' ,  removeCount  )
+    const removeCount = clearFolder( ['../' + folder] )
     t.ok( removeCount === -1, `the operation is aborted` )
 
     process.chdir( '..' )
-    fs.rmdirSync( folders[0] )
+    fs.rmdirSync( folder )
     t.end()
 })
