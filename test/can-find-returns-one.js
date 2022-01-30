@@ -1,6 +1,6 @@
-const fs = require('fs')
-const tap = require('tap')
-const clearFolder = require('../cli.js')
+import fs from 'fs'
+import tap from 'tap'
+import clearFolder from '../cli.js'
 
 
 tap.test(`one removal was carried out when an existent folder is specified`, function ( t ) {

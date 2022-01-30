@@ -1,6 +1,6 @@
 {
   "name": "clear-folder",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "Empties the contents of a directory, for instance your build directory",
   "main": "cli.js",
   "bin": {
@@ -11,6 +11,7 @@
     "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
     "test": "node ./cli.js .nyc_output && tap test/*.js"
   },
+  "type": "module",
   "types": "types/index.d.ts",
   "repository": {
     "type": "git",

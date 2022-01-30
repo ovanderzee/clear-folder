@@ -1,6 +1,6 @@
-const spawnSync = require('child_process').spawnSync;
-const fs = require('fs')
-const tap = require('tap')
+import { spawnSync } from 'child_process'
+import fs from 'fs'
+import tap from 'tap'
 
 const moduleRoot = process.cwd()
 const probefolder = moduleRoot + '/probe'

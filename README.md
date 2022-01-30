@@ -13,6 +13,9 @@ The directory to clear must be inside the current directory.
 For brevity you may call this app with 'cf' instead of 'clear-folder'.
 
 ## Usage
+Since version 4, clear-folder is an es-module.
+To use commonjs modules, use clear-folder version 3.x.x.
+
 Add a number of names of folders to empty:
 
 ```json
@@ -32,7 +35,7 @@ npx cf folder
 In a script:
 
 ```js
-const cf = require('clear-folder');
+import cf from 'clear-folder'
 ...
 cf(['folder1', 'folder2'])
 ```

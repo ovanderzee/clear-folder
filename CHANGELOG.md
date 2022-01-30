@@ -1,8 +1,11 @@
 # Changelog
 
-## [] - 2022-01-30
+## [4.0.0] - 2022-01-23
+
+Modernise along with NodeJS.
 
 ### Changed
+- BREAKING: Clear-folder is an es-module now.
 - Use recursive method to delete and leave path to conditional deleting
 
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
-const chalk = require('chalk')
+import fs from 'fs'
+import path from 'path'
+import chalk from 'chalk'
 
 /**
  * Remove files and subfolders in the specified folder
@@ -68,10 +68,10 @@ const clearFolderGate = function ( folders ) {
 }
 
 if (process.argv && process.argv.length > 2) {
-    return clearFolderGate(
+    clearFolderGate(
         // [0] = node, [1] = clear-folder
         process.argv.splice(2)
     )
 }
 
-module.exports = clearFolderGate
+export default clearFolderGate
