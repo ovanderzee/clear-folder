@@ -5,7 +5,7 @@ const path = require('path')
 const chalk = require('chalk')
 
 /**
- * Remove from deepest subfolder up to specified folder
+ * Remove files and subfolders in the specified folder
  * @param {string} folder - folder name
  */
 const clearFolderContents = function ( folder ) {
@@ -13,8 +13,7 @@ const clearFolderContents = function ( folder ) {
         fs.readdirSync(folder).forEach ( function ( file, index ) {
             const curPath = folder + "/" + file
             if (fs.lstatSync( curPath ).isDirectory()) {
-                clearFolderContents( curPath )
-                fs.rmdirSync( curPath )
+                fs.rmSync( curPath, { recursive: true, force: true } )
             } else {
                 fs.unlinkSync( curPath )
             }

@@ -1,5 +1,10 @@
 # Changelog
 
+## [] - 2022-01-30
+
+### Changed
+- Use recursive method to delete and leave path to conditional deleting
+
 
 ## [3.1.0] - 2022-01-20
 
