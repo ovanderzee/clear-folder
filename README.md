@@ -1,5 +1,5 @@
-[![CircleCI](https://circleci.com/gh/ovanderzee/clear-folder/tree/main.svg?style=svg)](https://circleci.com/gh/ovanderzee/clear-folder/?branch=main)
-[![Coverage Status](https://coveralls.io/repos/github/ovanderzee/clear-folder/badge.svg?branch=main)](https://coveralls.io/github/ovanderzee/clear-folder?branch=main)
+[![CircleCI](https://circleci.com/gh/ovanderzee/clear-folder/tree/v3.svg?style=svg)](https://circleci.com/gh/ovanderzee/clear-folder/?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/ovanderzee/clear-folder/badge.svg?branch=v3)](https://coveralls.io/github/ovanderzee/clear-folder?branch=main)
 
 # clear-folder
 Clears the contents of a directory synchronously,
@@ -11,6 +11,9 @@ intended to use safely in the scripts section of a package.json.
 It just uses the synchronous methods of the node.js fs module.
 The directory to clear must be inside the current directory.
 For brevity you may call this app with 'cf' instead of 'clear-folder'.
+
+The v3 branch supports CommonJS modules.
+To work with es6-modules, use version 4+.
 
 ## Usage
 Add a number of names of folders to empty:
