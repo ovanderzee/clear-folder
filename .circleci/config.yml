@@ -14,6 +14,7 @@ jobs:
             - run:
                   name: Install and Test
                   command: npm install && node ./cli.js coverage .nyc_output && npx tap test/*.js --coverage-report=lcov
-            - coveralls/upload:
-                  token: COVERALLS_REPO_TOKEN
-                  verbose: true
+#            turn off coverage reporting temporarily https://github.com/tapjs/node-tap/issues/735
+#            - coveralls/upload:
+#                  token: COVERALLS_REPO_TOKEN
+#                  verbose: true
