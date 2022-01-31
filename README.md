@@ -1,5 +1,4 @@
 [![CircleCI](https://circleci.com/gh/ovanderzee/clear-folder/tree/main.svg?style=svg)](https://circleci.com/gh/ovanderzee/clear-folder/?branch=main)
-[//]: # [![Coverage Status](https://coveralls.io/repos/github/ovanderzee/clear-folder/badge.svg?branch=main)](https://coveralls.io/github/ovanderzee/clear-folder?branch=main)
 
 # clear-folder
 Clears the contents of a directory synchronously,
