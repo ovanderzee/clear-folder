@@ -4,6 +4,9 @@
 Clears the contents of a directory synchronously,
 for instance the build directory of your node package module.
 
+Since version 4, clear-folder is an es-module.
+To use commonjs modules, use clear-folder version 3.x.x.
+
 ## Safe deleting
 Clear-folder is a cli app,
 intended to use safely in the scripts section of a package.json.
@@ -12,9 +15,6 @@ The directory to clear must be inside the current directory.
 For brevity you may call this app with 'cf' instead of 'clear-folder'.
 
 ## Usage
-Since version 4, clear-folder is an es-module.
-To use commonjs modules, use clear-folder version 3.x.x.
-
 Add a number of names of folders to empty:
 
 ```json
