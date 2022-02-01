@@ -68,7 +68,7 @@ const clearFolderGate = function ( folders ) {
 }
 
 if (process.argv && process.argv.length > 2) {
-    return clearFolderGate(
+    clearFolderGate(
         // [0] = node, [1] = clear-folder
         process.argv.splice(2)
     )
