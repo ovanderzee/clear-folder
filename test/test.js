@@ -88,3 +88,10 @@ tap.test('clear module with full path, referencing the current directory: nothin
     t.ok( fs.existsSync( playfile ), `file ${playfile} should not be touched` )
     t.end()
 })
+
+tap.test('clear without arguments: nothing happens', function ( t ) {
+    spawnSync( 'node', ['cli.js'] )
+    t.ok( fs.existsSync( subfolder ), `folder ${subfolder} should not be touched` )
+    t.ok( fs.existsSync( subfile ), `file ${subfile} should not be touched` )
+    t.end()
+})
