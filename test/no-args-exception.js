@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import tap from 'tap'
 import clearFolder from '../cli.js'
 

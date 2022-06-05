@@ -1,6 +1,6 @@
 {
   "name": "clear-folder",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Empties the contents of a directory, for instance your build directory",
   "main": "cli.js",
   "bin": {
@@ -31,9 +31,9 @@
   "license": "ISC",
   "devDependencies": {
     "coveralls": "^3.1.1",
-    "tap": "^15.1.6"
+    "tap": "^16.2.0"
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^5.0.1"
   }
 }
