@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.1.0] - 2022-06-05
+
+Better support for using clear-folder logic in a script.
+
+### Changed
+- Dependency update
+- Access to logic without handling cli process
+
+### Fixed
+- Fix typescript declaration
+
+
 ## [4.0.0] - 2022-01-23
 
 Modernise along with NodeJS.
