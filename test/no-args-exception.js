@@ -1,7 +1,5 @@
-const fs = require('fs')
-const path = require('path')
 const tap = require('tap')
-const clearFolder = require('../cli.js')
+const clearFolder = require('../lib/clear-folder.js')
 
 tap.test(`the operation is aborted
         when no folders are specified`, function ( t ) {

@@ -1,3 +1,5 @@
-declare function clearFolder (folders: string[]): void
+// when using the library file in a custom script
+
+declare function clearFolder (folders: string[]): number
 
 export = clearFolder

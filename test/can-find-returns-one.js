@@ -1,6 +1,6 @@
 const fs = require('fs')
 const tap = require('tap')
-const clearFolder = require('../cli.js')
+const clearFolder = require('../lib/clear-folder.js')
 
 
 const setupTest = ( t, folders ) => {
