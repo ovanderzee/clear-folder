@@ -1,5 +1,5 @@
 import tap from 'tap'
-import clearFolder from '../cli.js'
+import clearFolder from '../lib/clear-folder.js'
 
 tap.test(`a message is logged and the operation is aborted
         when the current directory is targeted using '/'`, function ( t ) {

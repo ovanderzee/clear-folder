@@ -2,7 +2,7 @@
   "name": "clear-folder",
   "version": "4.1.0",
   "description": "Empties the contents of a directory, for instance your build directory",
-  "main": "cli.js",
+  "main": "./lib/clear-folder.js",
   "bin": {
     "clear-folder": "./cli.js",
     "cf": "./cli.js"

@@ -1,5 +1,5 @@
 import tap from 'tap'
-import clearFolder from '../cli.js'
+import clearFolder from '../lib/clear-folder.js'
 
 tap.test(`the operation is aborted
         when no folders are specified`, function ( t ) {

@@ -1,7 +1,6 @@
 import fs from 'fs'
 import tap from 'tap'
-import clearFolder from '../cli.js'
-
+import clearFolder from '../lib/clear-folder.js'
 
 const setupTest = ( t, folders ) => {
     folders.forEach(folder => {
