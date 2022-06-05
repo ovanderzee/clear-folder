@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.2.0] - 2022-06-05
+## [3.2.1] - 2022-06-05
 
 Better support for using clear-folder logic in a script.
 
