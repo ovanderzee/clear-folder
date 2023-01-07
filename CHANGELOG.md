@@ -1,11 +1,15 @@
 # Changelog
 
-## [4.2.0] - 2023-01-08
+## [5.0.0] - 2023-01-09
 
 Maintenance
 
+### Added
+- Maintain source with typescript
+
 ### Changed
 - Show warnings in yellow instead of green
+- BREAKING: Location of type declarations
 
 
 ## [4.1.0] - 2022-06-05
