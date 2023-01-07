@@ -7,7 +7,7 @@ import chalk from 'chalk'
  * @param {string} folder - folder name
  * @return {number} folder removed
  */
-const clearFolderContents = function ( folder ) {
+const clearFolderContents = function ( folder: string ): number {
     if ( fs.existsSync( folder ) ) {
         fs.readdirSync(folder).forEach ( function ( file, index ) {
             const curPath = folder + "/" + file
@@ -30,7 +30,7 @@ const clearFolderContents = function ( folder ) {
  * @param {string[]} folder - folder names relative to working directory
  * @return {number} folders removed
  */
-const clearFolderGate = function ( folders ) {
+const clearFolderGate = function ( folders: string[] ): number {
     // usage hint
     if ( !folders.length || ['--help', '-h'].includes( folders[0] ) || folders[0].includes( '?' ) ) {
         const text = `clear-folder needs one or more foldernames to operate`
