@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.2.0] - 2023-01-08
+
+Maintenance
+
+### Changed
+- Show warnings in yellow instead of green
+
+
 ## [4.1.0] - 2022-06-05
 
 Better support for using clear-folder logic in a script.
