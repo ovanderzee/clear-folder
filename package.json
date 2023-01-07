@@ -8,6 +8,7 @@
     "cf": "./cli.js"
   },
   "scripts": {
+    "build": "tsc",
     "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
     "test": "node ./cli.js .nyc_output && tap test/*.js"
   },
@@ -31,7 +32,8 @@
   "license": "ISC",
   "devDependencies": {
     "coveralls": "^3.1.1",
-    "tap": "^16.3.2"
+    "tap": "^16.3.2",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "chalk": "^5.2.0"
