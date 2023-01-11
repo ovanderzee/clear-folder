@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
-    "test": "npm run build && node ./cli.js .nyc_output && tap test/*.js"
+    "coverage": "npm run build && node ./cli.js coverage && c8 -r lcov tap --no-coverage test/*.js",
+    "test": "npm run build && node ./cli.js coverage && c8 -r text tap --no-coverage test/*.js"
   },
   "type": "module",
   "types": "lib/clear-folder.d.ts",
@@ -31,6 +31,7 @@
   "author": "Onno van der Zee",
   "license": "ISC",
   "devDependencies": {
+    "c8": "^7.12.0",
     "coveralls": "^3.1.1",
     "tap": "^16.3.2",
     "typescript": "^4.9.4"

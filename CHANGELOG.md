@@ -12,6 +12,9 @@ Maintenance
 - BREAKING: Location of type declarations; was: types/index.d.ts,
   is now: lib/clear-folder.d.ts.
 
+### Fixed
+- Fixed coverage. Testing the built files however :(
+
 
 ## [4.1.0] - 2022-06-05
 
