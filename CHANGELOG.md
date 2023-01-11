@@ -8,8 +8,9 @@ Maintenance
 - Maintain source with typescript
 
 ### Changed
-- Show warnings in yellow instead of green
-- BREAKING: Location of type declarations
+- Show warnings in black on turquoise instead of green.
+- BREAKING: Location of type declarations; was: types/index.d.ts,
+  is now: lib/clear-folder.d.ts.
 
 
 ## [4.1.0] - 2022-06-05

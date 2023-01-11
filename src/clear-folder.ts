@@ -2,6 +2,21 @@ import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 
+/** Emphesised log */
+const logInfo = function ( text: string ): void {
+    console.info( chalk.bold( ` ${text} ` ) )
+}
+
+/** Distinguishing log */
+const logWarning = function ( text: string ): void {
+    console.error(chalk.bgCyan.black(` ${text} `))
+}
+
+/** Distinguishing abortion message */
+const logError = function ( text: string ): void {
+    console.error( chalk.bgRed.whiteBright( ` ${text} ` ) )
+}
+
 /**
  * Remove files and subfolders in the specified folder
  * @param {string} folder - folder name
@@ -20,7 +35,7 @@ const clearFolderContents = function ( folder: string ): number {
         return 1
     } else {
         const text = `clear-folder can't find "${folder.substr( process.cwd().length + 1 )}"`
-        console.error( chalk.bgYellow.whiteBright( ` ${text} ` ) )
+        logWarning( text )
         return 0
     }
 }
@@ -34,7 +49,7 @@ const clearFolderGate = function ( folders: string[] ): number {
     // usage hint
     if ( !folders.length || ['--help', '-h'].includes( folders[0] ) || folders[0].includes( '?' ) ) {
         const text = `clear-folder needs one or more foldernames to operate`
-        console.info( chalk.bold( ` ${text} ` ) )
+        logInfo( text )
         return -1
     }
 
@@ -48,7 +63,7 @@ const clearFolderGate = function ( folders: string[] ): number {
                 fullPath === process.cwd()
             ) {
                 const text = `clear-folder operates on subfolders of current directory; check "${folder}"`
-                console.error( chalk.bgRed.whiteBright( ` ${text} ` ) )
+                logError( text )
                 return ''
             }
             return fullPath
@@ -62,7 +77,7 @@ const clearFolderGate = function ( folders: string[] ): number {
         }, 0)
         return removeTotal
     } else {
-        // do not operate on current directory or above
+        // do not operate on current directory or outside
         return -1
     }
 }
