@@ -1,9 +1,11 @@
 .circleci
+clear-folder*.tgz
 coverage
 .DS_Store
 .editorconfig
 .idea
 node_modules
-.nyc_output
 probe
+src
 test
+tsconfig.json
