@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "coverage": "node ./cli.js coverage .nyc_output && tap test/*.js --coverage-report=lcov",
-    "test": "node ./cli.js .nyc_output && tap test/*.js"
+    "test": "npm run build && node ./cli.js .nyc_output && tap test/*.js"
   },
   "type": "module",
   "types": "lib/clear-folder.d.ts",
