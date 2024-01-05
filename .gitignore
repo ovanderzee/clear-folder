@@ -1,6 +1,6 @@
 clear-folder*.tgz
-coverage
 .DS_Store
 .idea
 node_modules
-probe
+/probe
+/.tap
