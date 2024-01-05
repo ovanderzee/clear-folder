@@ -13,7 +13,7 @@ jobs:
             - checkout
             - run:
                   name: Install and Test
-                  command: npm install && npm test
+                  command: npm install && npm test --path_to_lcov=/.tap/report/lcov.info
             - coveralls/upload:
                   token: COVERALLS_REPO_TOKEN
                   verbose: true
