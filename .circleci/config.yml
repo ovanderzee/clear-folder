@@ -8,12 +8,12 @@ orbs:
 jobs:
     build:
         docker:
-            - image: 'cimg/node:16.13.2'
+            - image: 'cimg/node:20.10.0'
         steps:
             - checkout
             - run:
                   name: Install and Test
-                  command: npm install && npm run coverage
+                  command: npm install && npm test
             - coveralls/upload:
                   token: COVERALLS_REPO_TOKEN
                   verbose: true
