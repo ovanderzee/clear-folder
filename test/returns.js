@@ -51,7 +51,7 @@ tap.test(`multiple removals are carried out when a non-existent folder among exi
     t.end()
 })
 
-tap.test(`no removals are carried out when a non-existent folder is specified`, function ( t ) {
+tap.test(`no removals are carried out when non-existent folders are specified`, function ( t ) {
     const folder = 'non-existent-folder-name'
     const removeCount = clearFolder( [folder] )
     t.ok( removeCount === 0, `no removals are carried out` )

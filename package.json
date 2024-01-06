@@ -8,7 +8,7 @@
     "cf": "./cli.js"
   },
   "scripts": {
-    "build": "node ./cli.js .tap && tsc",
+    "build": "node ./cli.js probe .tap && tsc",
     "coverage": "npm run build && tap test/*.js --coverage-report=lcov",
     "test": "npm run build && tap test/*.js"
   },
