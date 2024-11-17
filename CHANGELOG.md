@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0] - 2024-11-17
+
+Modernisation
+
+### Changed
+- Updated and rebuild
+
 ## [5.0.0] - 2023-01-09
 
 Maintenance
