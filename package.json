@@ -30,6 +30,9 @@
   ],
   "author": "Onno van der Zee",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "coveralls": "^3.1.1",
     "tap": "^21.0.1",
