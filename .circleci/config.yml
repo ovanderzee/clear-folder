@@ -14,7 +14,4 @@ jobs:
             - run:
                   name: Install and Test
                   command: npm install && npm run coverage
-            - coveralls/upload:
-                  coverage_file: ./.tap/report/lcov.info
-                  token: COVERALLS_REPO_TOKEN
-                  verbose: true
+            - coveralls/upload
