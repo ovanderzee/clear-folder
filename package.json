@@ -1,6 +1,6 @@
 {
   "name": "clear-folder",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Empties the contents of a directory, for instance your build directory",
   "main": "./lib/clear-folder.js",
   "bin": {
@@ -31,10 +31,10 @@
   "author": "Onno van der Zee",
   "license": "ISC",
   "devDependencies": {
-    "tap": "^21.1.0",
-    "typescript": "^5.8.3"
+    "tap": "^21.5.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.6.2"
   }
 }
