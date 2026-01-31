@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "node ./cli.js probe .tap && tsc",
+    "ci": "npm i",
     "coverage": "npm run build && tap test/*.js --coverage-report=lcov",
     "test": "npm run build && tap test/*.js"
   },
