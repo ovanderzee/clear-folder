@@ -22,6 +22,7 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npm test
+      - run: npm whoami
 
   publish-npm:
     needs: build
@@ -34,6 +35,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install -g npm@latest
       - run: npm ci
-      - run: npm publish --provenance
-      - env:
+      - run: npm publish --provenance --verbose
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
