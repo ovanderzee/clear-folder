@@ -17,7 +17,7 @@
   "types": "lib/clear-folder.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ovanderzee/clear-folder.git"
+    "url": "git+https://github.com/ovanderzee/clear-folder.git"
   },
   "keywords": [
     "clean",
