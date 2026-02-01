@@ -22,7 +22,7 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npm test
-      - run: npm whoami
+      - run: npm cache verify
 
   publish-npm:
     needs: build
