@@ -1,20 +1,20 @@
 import fs from 'fs'
 import path from 'path'
-import chalk from 'chalk'
+import pico from 'picocolors'
 
 /** Emphesised log */
 const logInfo = function ( text: string ): void {
-    console.info( chalk.bold( ` ${text} ` ) )
+    console.info( pico.bold( ` ${text} ` ) )
 }
 
 /** Distinguishing log */
 const logWarning = function ( text: string ): void {
-    console.error(chalk.bgCyan.black(` ${text} `))
+    console.error(pico.bgGreen(pico.whiteBright(` ${text} `)))
 }
 
 /** Distinguishing abortion message */
 const logError = function ( text: string ): void {
-    console.error( chalk.bgRed.whiteBright( ` ${text} ` ) )
+    console.error( pico.bgRed(pico.whiteBright( ` ${text} ` ) ) )
 }
 
 /**
