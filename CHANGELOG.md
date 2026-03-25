@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.2] - 2024-11-17
+
+### Changed
+- Replaced Chalk by Picocolors
+
 ## [5.1.0] - 2024-11-17
 
 Modernisation
