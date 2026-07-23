@@ -1,16 +1,30 @@
 # Changelog
 
-## [v5.2] - 2024-11-17
+We are feature complete and thus in maintenance mode,
+You can expect dependency updates.
+
+
+## [v5.2.2] - 2026-07-23
+
+Dependency updates
+
+
+## [v5.2.0] - 2026-03-26
 
 ### Changed
 - Replaced Chalk by Picocolors
 
-## [5.1.0] - 2024-11-17
+## [v5.1.x] - 2026-02-01
 
-Modernisation
+### Added
+Automatic publishing
+
+
+## [5.1.0] - 2024-11-17
 
 ### Changed
 - Updated and rebuild
+
 
 ## [5.0.0] - 2023-01-09
 
