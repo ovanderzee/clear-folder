@@ -8,7 +8,7 @@
     "cf": "./cli.js"
   },
   "scripts": {
-    "build": "node ./cli.js probe .tap && tsc",
+    "build": "node ./cli.js probe .tap && tsc --build",
     "coverage": "npm run build && tap test/*.js --coverage-report=lcov",
     "test": "npm run build && tap test/*.js"
   },
@@ -30,11 +30,12 @@
   ],
   "author": "Onno van der Zee",
   "license": "ISC",
-  "devDependencies": {
-    "tap": "^21.7.4",
-    "typescript": "^7.0.2"
-  },
   "dependencies": {
     "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tap": "^21.7.4",
+    "typescript": "^6.0.3"
   }
 }
